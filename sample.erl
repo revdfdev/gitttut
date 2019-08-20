@@ -13,12 +13,16 @@
 -export([hello_world/0]).
 
 
+printLn(OUTPUT) ->
+  io:fwrite(OUTPUT).
 
 hello_world() ->
   io:fwrite("Hello world\n"),
   Greeting = "Hello Rehan\n",
   X = 10,
   Y = 10,
+  printLn(Greeting),
+  do_count(19),
   Result = X + Y,
   SubStra = X - Y,
   Mult = X * Y,
@@ -27,4 +31,8 @@ hello_world() ->
   io:fwrite("~w~n", [SubStra]),
   io:fwrite("~w~n", [Mult]),
   io:fwrite("~w~n", [Divi]),
-  io:fwrite("~w", [Result]).
+  io:fwrite("~w~n", [Result]).
+
+
+do_count(0) -> 0;
+do_count(N) -> do_count(N - 1).

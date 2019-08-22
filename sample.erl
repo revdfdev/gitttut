@@ -18,6 +18,9 @@ fac(N) when N > 0 -> N*fac(N-1).
 printLn(OUTPUT) ->
   io:fwrite(OUTPUT).
 
+printNum(NUM) ->
+  io:fwrite("~w~n", [NUM]).
+
 hello_world() ->
   io:fwrite("Hello world\n"),
   Greeting = "Hello Rehan\n",
